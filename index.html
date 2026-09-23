@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Мои оценки</title>
+<style>
+  :root {
+    --primary: #4F46E5;
+    --secondary: #7C3AED;
+    --bg: #FAFAFF;
+    --surface: #FFFFFF;
+    --text: #1C1B1F;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --success: #16A34A;
+    --info: #0EA5E9;
+    --warn: #F59E0B;
+    --danger: #DC2626;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, Roboto, "Segoe UI", sans-serif;
+    background: linear-gradient(160deg, var(--primary), var(--secondary));
+    min-height: 100vh;
+    color: var(--text);
+  }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 24px 16px 60px; }
+  .card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+  input[type=text] {
+    width: 100%;
+    font-size: 28px;
+    letter-spacing: 8px;
+    text-align: center;
+    padding: 14px;
+    border-radius: 14px;
+    border: 2px solid var(--border);
+    outline: none;
+  }
+  input[type=text]:focus { border-color: var(--primary); }
+  button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    background: var(--primary);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:active { opacity: 0.85; }
+  .error { color: var(--danger); font-size: 14px; margin-top: 10px; display: none; }
+  .top-logo { text-align: center; color: white; font-weight: 700; font-size: 20px; margin-bottom: 18px; opacity: 0.95; }
+  #resultView { display: none; }
+  .student-header { margin-bottom: 18px; }
+  .student-header h1 { margin-bottom: 2px; }
+  .logout { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+  .subject-card { margin-top: 14px; }
+  .subject-title { font-weight: 700; font-size: 16px; margin-bottom: 10px; display:flex; align-items:center; gap:8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display:inline-block; }
+  .row { display:flex; align-items:center; gap:10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .row:last-child { border-bottom: none; }
+  .badge { width: 34px; height: 34px; border-radius: 10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:700; flex-shrink:0; }
+  .row-body { flex: 1; min-width: 0; }
+  .row-date { color: var(--muted); font-size: 12px; }
+  .row-text { font-size: 14px; }
+  .hw-icon { background: var(--secondary); }
+  .empty { color: var(--muted); font-size: 14px; text-align: center; padding: 24px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top-logo">📘 TeachHelper</div>
+
+  <div class="card" id="loginView">
+    <h1>Мои оценки</h1>
+    <p class="sub">Введи свой код (его даёт учитель)</p>
+    <input type="text" id="pinInput" inputmode="numeric" maxlength="4" placeholder="••••">
+    <button id="submitBtn">Показать оценки</button>
+    <p class="error" id="errorMsg">Код не найден. Проверь и попробуй ещё раз.</p>
+  </div>
+
+  <div class="card" id="resultView">
+    <div class="student-header">
+      <h1 id="studentName"></h1>
+      <p class="sub" id="studentClass"></p>
+    </div>
+    <div id="subjectsContainer"></div>
+    <button class="logout" id="logoutBtn">Ввести другой код</button>
+  </div>
+</div>
+
+<script>
+let DATA = null;
+
+fetch('./data.json?_=' + Date.now())
+  .then(r => r.json())
+  .then(d => { DATA = d; })
+  .catch(() => { DATA = null; });
+
+function gradeColor(v) {
+  if (v >= 5) return 'var(--success)';
+  if (v == 4) return 'var(--info)';
+  if (v == 3) return 'var(--warn)';
+  return 'var(--danger)';
+}
+
+function show(id) { document.getElementById(id).style.display = 'block'; }
+function hide(id) { document.getElementById(id).style.display = 'none'; }
+
+document.getElementById('pinInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') document.getElementById('submitBtn').click();
+});
+
+document.getElementById('submitBtn').addEventListener('click', function() {
+  const pin = document.getElementById('pinInput').value.trim();
+  hide('errorMsg');
+  if (!DATA) { alert('Данные ещё загружаются, попробуй через секунду.'); return; }
+
+  const student = DATA.students.find(s => s.code === pin);
+  if (!student) { show('errorMsg'); return; }
+
+  renderStudent(student);
+  hide('loginView');
+  show('resultView');
+});
+
+document.getElementById('logoutBtn').addEventListener('click', function() {
+  document.getElementById('pinInput').value = '';
+  hide('resultView');
+  show('loginView');
+});
+
+function renderStudent(student) {
+  const cls = DATA.classes.find(c => c.id === student.classId);
+  document.getElementById('studentName').textContent = student.fullName;
+  document.getElementById('studentClass').textContent = cls ? ('Класс ' + cls.name) : '';
+
+  const myGrades = DATA.grades.filter(g => g.studentId === student.id);
+  const myHomework = DATA.homework.filter(h => h.classId === student.classId);
+
+  const subjectIds = new Set([...myGrades.map(g => g.subjectId), ...myHomework.map(h => h.subjectId)]);
+  const container = document.getElementById('subjectsContainer');
+  container.innerHTML = '';
+
+  if (subjectIds.size === 0) {
+    container.innerHTML = '<p class="empty">Пока нет ни оценок, ни домашних заданий.</p>';
+    return;
+  }
+
+  subjectIds.forEach(subjectId => {
+    const subject = DATA.subjects.find(s => s.id === subjectId);
+    if (!subject) return;
+
+    const items = [];
+    myGrades.filter(g => g.subjectId === subjectId).forEach(g => items.push({ type: 'grade', date: g.date, value: g.value, comment: g.comment }));
+    myHomework.filter(h => h.subjectId === subjectId).forEach(h => items.push({ type: 'hw', date: h.date, title: h.title, text: h.text }));
+    items.sort((a, b) => b.date.localeCompare(a.date));
+
+    const card = document.createElement('div');
+    card.className = 'subject-card';
+    const title = document.createElement('div');
+    title.className = 'subject-title';
+    title.innerHTML = '<span class="dot" style="background:' + (subject.color || '#4F46E5') + '"></span>' + subject.name;
+    card.appendChild(title);
+
+    items.forEach(it => {
+      const row = document.createElement('div');
+      row.className = 'row';
+      if (it.type === 'grade') {
+        row.innerHTML =
+          '<div class="badge" style="background:' + gradeColor(it.value) + '">' + it.value + '</div>' +
+          '<div class="row-body"><div class="row-date">' + it.date + '</div>' +
+          (it.comment ? '<div class="row-text">' + escapeHtml(it.comment) + '</div>' : '') + '</div>';
+      } else {
+        row.innerHTML =
+          '<div class="badge hw-icon">ДЗ</div>' +
+          '<div class="row-body"><div class="row-date">' + it.date + (it.title ? ' · ' + escapeHtml(it.title) : '') + '</div>' +
+          (it.text ? '<div class="row-text">' + escapeHtml(it.text) + '</div>' : '') + '</div>';
+      }
+      card.appendChild(row);
+    });
+
+    container.appendChild(card);
+  });
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+</script>
+</body>
+</html>
