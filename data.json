@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T04:14:44.790Z",
+  "generatedAt": "2026-09-23T04:25:50.385Z",
   "classes": [
     {
       "id": 1,
@@ -187,29 +187,6 @@
       "code": "1562"
     }
   ],
-  "grades": [
-    {
-      "studentId": 30,
-      "subjectId": 3,
-      "date": "2026-09-21",
-      "value": 5,
-      "comment": ""
-    }
-  ],
-  "homework": [
-    {
-      "classId": 3,
-      "subjectId": 3,
-      "date": "2026-09-21",
-      "title": "",
-      "text": "",
-      "attachments": [
-        {
-          "name": "images (1).jpeg",
-          "url": "assets\/note3_1_images__1_.jpeg",
-          "isImage": true
-        }
-      ]
-    }
-  ]
+  "grades": [],
+  "homework": []
 }
