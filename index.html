@@ -176,6 +176,7 @@ document.getElementById('pinInput').addEventListener('keydown', function(e) {
 document.getElementById('submitBtn').addEventListener('click', function() {
   const pin = document.getElementById('pinInput').value.trim();
   hide('errorMsg');
+  if (!/^[0-9]{4}$/.test(pin)) { show('errorMsg'); return; }
   if (!DATA) { alert('Данные ещё загружаются, попробуй через секунду.'); return; }
 
   const student = DATA.students.find(s => s.code === pin);
