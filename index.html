@@ -27,7 +27,7 @@
     min-height: 100vh;
     color: var(--text);
   }
-  .wrap { max-width: 480px; margin: 0 auto; padding: 24px 16px 60px; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 24px 16px 60px; }
   .card {
     background: var(--surface);
     border-radius: 20px;
@@ -48,8 +48,6 @@
   }
   input[type=text]:focus { border-color: var(--primary); }
   button {
-    width: 100%;
-    margin-top: 14px;
     padding: 14px;
     border: none;
     border-radius: 14px;
@@ -59,23 +57,59 @@
     font-weight: 600;
     cursor: pointer;
   }
+  button.full { width: 100%; margin-top: 14px; }
   button:active { opacity: 0.85; }
   .error { color: var(--danger); font-size: 14px; margin-top: 10px; display: none; }
   .top-logo { text-align: center; color: white; font-weight: 700; font-size: 20px; margin-bottom: 18px; opacity: 0.95; }
   #resultView { display: none; }
-  .student-header { margin-bottom: 18px; }
+  .student-header { margin-bottom: 18px; display:flex; align-items:center; gap:12px; }
   .student-header h1 { margin-bottom: 2px; }
-  .logout { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
-  .subject-card { margin-top: 14px; }
-  .subject-title { font-weight: 700; font-size: 16px; margin-bottom: 10px; display:flex; align-items:center; gap:8px; }
-  .dot { width: 10px; height: 10px; border-radius: 50%; display:inline-block; }
-  .row { display:flex; align-items:center; gap:10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
-  .row:last-child { border-bottom: none; }
-  .badge { width: 34px; height: 34px; border-radius: 10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:700; flex-shrink:0; }
-  .row-body { flex: 1; min-width: 0; }
-  .row-date { color: var(--muted); font-size: 12px; }
-  .row-text { font-size: 14px; }
-  .hw-icon { background: var(--secondary); }
+  .header-text { flex: 1; }
+  .logout { background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 8px 14px; font-size: 14px; }
+  .subject-card { margin-top: 18px; border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
+  .subject-title { font-weight: 700; font-size: 16px; margin-bottom: 12px; display:flex; align-items:center; gap:8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display:inline-block; flex-shrink:0; }
+  .table-scroll { overflow-x: auto; padding-bottom: 4px; }
+  table { border-collapse: collapse; }
+  td, th {
+    padding: 6px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  th.row-label, td.row-label {
+    text-align: left;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 600;
+    white-space: nowrap;
+    padding-right: 10px;
+    position: sticky;
+    left: 0;
+    background: var(--surface);
+  }
+  .date-head { font-size: 12px; color: var(--muted); font-weight: 600; min-width: 44px; white-space: nowrap; }
+  .date-head.today { color: var(--primary); }
+  .cell-btn {
+    width: 34px; height: 34px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px; color: white;
+    border: none; cursor: pointer; margin: 0 auto;
+  }
+  .cell-empty { width: 34px; height: 34px; border-radius: 9px; border: 1.5px dashed var(--border); margin: 0 auto; }
+  .hw-btn { background: var(--secondary); font-size: 16px; }
+  .detail-box {
+    margin-top: 12px; padding: 12px; border-radius: 12px;
+    background: var(--bg); font-size: 14px; display: none;
+  }
+  .detail-box .d-date { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+  .detail-box .d-title { font-weight: 700; margin-bottom: 4px; }
+  .att-row { display:flex; gap:8px; flex-wrap: wrap; margin-top: 8px; }
+  .att-chip {
+    display:flex; align-items:center; gap:6px; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 10px; padding: 6px 10px;
+    font-size: 13px; text-decoration: none; color: var(--text);
+  }
+  .att-chip img { width: 28px; height: 28px; object-fit: cover; border-radius: 6px; }
   .empty { color: var(--muted); font-size: 14px; text-align: center; padding: 24px 0; }
 </style>
 </head>
@@ -87,17 +121,19 @@
     <h1>Мои оценки</h1>
     <p class="sub">Введи свой код (его даёт учитель)</p>
     <input type="text" id="pinInput" inputmode="numeric" maxlength="4" placeholder="••••">
-    <button id="submitBtn">Показать оценки</button>
+    <button class="full" id="submitBtn">Показать оценки</button>
     <p class="error" id="errorMsg">Код не найден. Проверь и попробуй ещё раз.</p>
   </div>
 
   <div class="card" id="resultView">
     <div class="student-header">
-      <h1 id="studentName"></h1>
-      <p class="sub" id="studentClass"></p>
+      <div class="header-text">
+        <h1 id="studentName"></h1>
+        <p class="sub" id="studentClass" style="margin:0;"></p>
+      </div>
+      <button class="logout" id="logoutBtn">Выйти</button>
     </div>
     <div id="subjectsContainer"></div>
-    <button class="logout" id="logoutBtn">Ввести другой код</button>
   </div>
 </div>
 
@@ -118,6 +154,20 @@ function gradeColor(v) {
 
 function show(id) { document.getElementById(id).style.display = 'block'; }
 function hide(id) { document.getElementById(id).style.display = 'none'; }
+function pad(n) { return n < 10 ? '0' + n : '' + n; }
+function fmtDate(iso) {
+  const p = iso.split('-');
+  return p.length === 3 ? p[2] + '.' + p[1] : iso;
+}
+function todayIso() {
+  const d = new Date();
+  return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+}
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str || '';
+  return div.innerHTML;
+}
 
 document.getElementById('pinInput').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') document.getElementById('submitBtn').click();
@@ -150,56 +200,125 @@ function renderStudent(student) {
   const myGrades = DATA.grades.filter(g => g.studentId === student.id);
   const myHomework = DATA.homework.filter(h => h.classId === student.classId);
 
-  const subjectIds = new Set([...myGrades.map(g => g.subjectId), ...myHomework.map(h => h.subjectId)]);
+  const subjectIds = [...new Set([...myGrades.map(g => g.subjectId), ...myHomework.map(h => h.subjectId)])];
   const container = document.getElementById('subjectsContainer');
   container.innerHTML = '';
 
-  if (subjectIds.size === 0) {
+  if (subjectIds.length === 0) {
     container.innerHTML = '<p class="empty">Пока нет ни оценок, ни домашних заданий.</p>';
     return;
   }
 
-  subjectIds.forEach(subjectId => {
+  const today = todayIso();
+
+  subjectIds.forEach((subjectId, subjIdx) => {
     const subject = DATA.subjects.find(s => s.id === subjectId);
     if (!subject) return;
 
-    const items = [];
-    myGrades.filter(g => g.subjectId === subjectId).forEach(g => items.push({ type: 'grade', date: g.date, value: g.value, comment: g.comment }));
-    myHomework.filter(h => h.subjectId === subjectId).forEach(h => items.push({ type: 'hw', date: h.date, title: h.title, text: h.text }));
-    items.sort((a, b) => b.date.localeCompare(a.date));
+    const sGrades = myGrades.filter(g => g.subjectId === subjectId);
+    const sHomework = myHomework.filter(h => h.subjectId === subjectId);
+    const dates = [...new Set([...sGrades.map(g => g.date), ...sHomework.map(h => h.date)])].sort();
 
     const card = document.createElement('div');
     card.className = 'subject-card';
+
     const title = document.createElement('div');
     title.className = 'subject-title';
-    title.innerHTML = '<span class="dot" style="background:' + (subject.color || '#4F46E5') + '"></span>' + subject.name;
+    title.innerHTML = '<span class="dot" style="background:' + (subject.color || '#4F46E5') + '"></span>' + escapeHtml(subject.name);
     card.appendChild(title);
 
-    items.forEach(it => {
-      const row = document.createElement('div');
-      row.className = 'row';
-      if (it.type === 'grade') {
-        row.innerHTML =
-          '<div class="badge" style="background:' + gradeColor(it.value) + '">' + it.value + '</div>' +
-          '<div class="row-body"><div class="row-date">' + it.date + '</div>' +
-          (it.comment ? '<div class="row-text">' + escapeHtml(it.comment) + '</div>' : '') + '</div>';
-      } else {
-        row.innerHTML =
-          '<div class="badge hw-icon">ДЗ</div>' +
-          '<div class="row-body"><div class="row-date">' + it.date + (it.title ? ' · ' + escapeHtml(it.title) : '') + '</div>' +
-          (it.text ? '<div class="row-text">' + escapeHtml(it.text) + '</div>' : '') + '</div>';
-      }
-      card.appendChild(row);
+    const scrollWrap = document.createElement('div');
+    scrollWrap.className = 'table-scroll';
+    const table = document.createElement('table');
+
+    const theadRow = document.createElement('tr');
+    theadRow.innerHTML = '<th class="row-label">Дата</th>';
+    dates.forEach(d => {
+      const th = document.createElement('th');
+      th.className = 'date-head' + (d === today ? ' today' : '');
+      th.textContent = fmtDate(d);
+      theadRow.appendChild(th);
     });
+    table.appendChild(theadRow);
+
+    const gradeRow = document.createElement('tr');
+    gradeRow.innerHTML = '<td class="row-label">Оценка</td>';
+    dates.forEach(d => {
+      const g = sGrades.find(x => x.date === d);
+      const td = document.createElement('td');
+      if (g) {
+        const btn = document.createElement('button');
+        btn.className = 'cell-btn';
+        btn.style.background = gradeColor(g.value);
+        btn.textContent = g.value;
+        btn.onclick = () => showDetail(subjIdx, { type: 'grade', date: d, value: g.value, comment: g.comment });
+        td.appendChild(btn);
+      } else {
+        const span = document.createElement('span');
+        span.className = 'cell-empty';
+        td.appendChild(span);
+      }
+      gradeRow.appendChild(td);
+    });
+    table.appendChild(gradeRow);
+
+    const hwRow = document.createElement('tr');
+    hwRow.innerHTML = '<td class="row-label">ДЗ</td>';
+    dates.forEach(d => {
+      const h = sHomework.find(x => x.date === d);
+      const td = document.createElement('td');
+      if (h) {
+        const btn = document.createElement('button');
+        btn.className = 'cell-btn hw-btn';
+        btn.textContent = '📝';
+        btn.onclick = () => showDetail(subjIdx, { type: 'hw', date: d, title: h.title, text: h.text, attachments: h.attachments || [] });
+        td.appendChild(btn);
+      } else {
+        const span = document.createElement('span');
+        span.className = 'cell-empty';
+        td.appendChild(span);
+      }
+      hwRow.appendChild(td);
+    });
+    table.appendChild(hwRow);
+
+    scrollWrap.appendChild(table);
+    card.appendChild(scrollWrap);
+
+    const detail = document.createElement('div');
+    detail.className = 'detail-box';
+    detail.id = 'detail-' + subjIdx;
+    card.appendChild(detail);
 
     container.appendChild(card);
+
+    // Scroll to the most recent date by default.
+    setTimeout(() => { scrollWrap.scrollLeft = scrollWrap.scrollWidth; }, 0);
   });
 }
 
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
+function showDetail(subjIdx, item) {
+  const box = document.getElementById('detail-' + subjIdx);
+  let html = '<div class="d-date">' + item.date + '</div>';
+  if (item.type === 'grade') {
+    html += '<div class="d-title">Оценка: ' + item.value + '</div>';
+    if (item.comment) html += '<div>' + escapeHtml(item.comment) + '</div>';
+  } else {
+    html += '<div class="d-title">' + (item.title ? escapeHtml(item.title) : 'Домашнее задание') + '</div>';
+    if (item.text) html += '<div>' + escapeHtml(item.text) + '</div>';
+    if (item.attachments && item.attachments.length > 0) {
+      html += '<div class="att-row">';
+      item.attachments.forEach(a => {
+        html += '<a class="att-chip" href="' + a.url + '" target="_blank" rel="noopener">';
+        if (a.isImage) html += '<img src="' + a.url + '" alt="">';
+        else html += '📎';
+        html += '<span>' + escapeHtml(a.name) + '</span></a>';
+      });
+      html += '</div>';
+    }
+  }
+  box.innerHTML = html;
+  box.style.display = 'block';
 }
 </script>
 </body>
