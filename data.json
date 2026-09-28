@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T10:59:59.155Z",
+  "generatedAt": "2026-09-28T11:20:14.391Z",
   "classes": [
     {
       "id": 1,
@@ -193,91 +193,104 @@
       "subjectId": 2,
       "date": "2026-09-23",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 34,
       "subjectId": 3,
       "date": "2026-09-24",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 43,
       "subjectId": 3,
       "date": "2026-09-24",
       "value": 2,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 38,
       "subjectId": 3,
       "date": "2026-09-25",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 37,
       "subjectId": 2,
       "date": "2026-09-28",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 39,
       "subjectId": 2,
       "date": "2026-09-28",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 38,
       "subjectId": 2,
       "date": "2026-09-28",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 40,
       "subjectId": 2,
       "date": "2026-09-28",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 30,
       "subjectId": 3,
       "date": "2026-09-21",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 29,
       "subjectId": 3,
       "date": "2026-09-28",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 28,
       "subjectId": 3,
       "date": "2026-09-28",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 31,
       "subjectId": 3,
       "date": "2026-09-28",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     },
     {
       "studentId": 30,
       "subjectId": 3,
       "date": "2026-09-28",
       "value": 5,
-      "comment": ""
+      "comment": "",
+      "absenceCode": ""
     }
   ],
   "homework": [
