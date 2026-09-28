@@ -111,6 +111,9 @@
   }
   .att-chip img { width: 28px; height: 28px; object-fit: cover; border-radius: 6px; }
   .empty { color: var(--muted); font-size: 14px; text-align: center; padding: 24px 0; }
+  .legend { margin-top: 18px; font-size: 13px; color: var(--muted); }
+  .legend summary { cursor: pointer; font-weight: 600; }
+  .legend div { margin-top: 6px; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -134,6 +137,10 @@
       <button class="logout" id="logoutBtn">Выйти</button>
     </div>
     <div id="subjectsContainer"></div>
+    <details class="legend">
+      <summary>Что значат отметки</summary>
+      <div>УП — пропуск по уважительной причине<br>Б — пропуск по болезни<br>НП — пропуск по неуважительной причине (прогул)<br>ОТ — пропуск без указания причины<br>ОП — опоздание на урок<br>ОСВ — освобождение от уроков</div>
+    </details>
   </div>
 </div>
 
@@ -144,6 +151,15 @@ fetch('./data.json?_=' + Date.now())
   .then(r => r.json())
   .then(d => { DATA = d; })
   .catch(() => { DATA = null; });
+
+const ABSENCE = {
+  'УП': { title: 'Пропуск по уважительной причине', color: '#64748B' },
+  'Б': { title: 'Пропуск по болезни', color: '#0EA5E9' },
+  'НП': { title: 'Пропуск по неуважительной причине (прогул)', color: '#DC2626' },
+  'ОТ': { title: 'Пропуск без указания причины', color: '#A855F7' },
+  'ОП': { title: 'Опоздание на урок', color: '#F59E0B' },
+  'ОСВ': { title: 'Освобождение от уроков', color: '#14B8A6' }
+};
 
 function gradeColor(v) {
   if (v >= 5) return 'var(--success)';
@@ -250,9 +266,17 @@ function renderStudent(student) {
       if (g) {
         const btn = document.createElement('button');
         btn.className = 'cell-btn';
-        btn.style.background = gradeColor(g.value);
-        btn.textContent = g.value;
-        btn.onclick = () => showDetail(subjIdx, { type: 'grade', date: d, value: g.value, comment: g.comment });
+        if (g.absenceCode) {
+          const ab = ABSENCE[g.absenceCode] || { title: g.absenceCode, color: '#64748B' };
+          btn.style.background = ab.color;
+          btn.style.fontSize = g.absenceCode.length >= 3 ? '10px' : '12px';
+          btn.textContent = g.absenceCode;
+          btn.onclick = () => showDetail(subjIdx, { type: 'absence', date: d, code: g.absenceCode, title: ab.title, comment: g.comment });
+        } else {
+          btn.style.background = gradeColor(g.value);
+          btn.textContent = g.value;
+          btn.onclick = () => showDetail(subjIdx, { type: 'grade', date: d, value: g.value, comment: g.comment });
+        }
         td.appendChild(btn);
       } else {
         const span = document.createElement('span');
@@ -301,7 +325,10 @@ function renderStudent(student) {
 function showDetail(subjIdx, item) {
   const box = document.getElementById('detail-' + subjIdx);
   let html = '<div class="d-date">' + item.date + '</div>';
-  if (item.type === 'grade') {
+  if (item.type === 'absence') {
+    html += '<div class="d-title">' + escapeHtml(item.code) + ' — ' + escapeHtml(item.title) + '</div>';
+    if (item.comment) html += '<div>' + escapeHtml(item.comment) + '</div>';
+  } else if (item.type === 'grade') {
     html += '<div class="d-title">Оценка: ' + item.value + '</div>';
     if (item.comment) html += '<div>' + escapeHtml(item.comment) + '</div>';
   } else {
