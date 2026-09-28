@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T09:32:25.043Z",
+  "generatedAt": "2026-09-28T10:59:59.155Z",
   "classes": [
     {
       "id": 1,
@@ -194,6 +194,90 @@
       "date": "2026-09-23",
       "value": 5,
       "comment": ""
+    },
+    {
+      "studentId": 34,
+      "subjectId": 3,
+      "date": "2026-09-24",
+      "value": 5,
+      "comment": ""
+    },
+    {
+      "studentId": 43,
+      "subjectId": 3,
+      "date": "2026-09-24",
+      "value": 2,
+      "comment": ""
+    },
+    {
+      "studentId": 38,
+      "subjectId": 3,
+      "date": "2026-09-25",
+      "value": 5,
+      "comment": ""
+    },
+    {
+      "studentId": 37,
+      "subjectId": 2,
+      "date": "2026-09-28",
+      "value": 5,
+      "comment": ""
+    },
+    {
+      "studentId": 39,
+      "subjectId": 2,
+      "date": "2026-09-28",
+      "value": 5,
+      "comment": ""
+    },
+    {
+      "studentId": 38,
+      "subjectId": 2,
+      "date": "2026-09-28",
+      "value": 5,
+      "comment": ""
+    },
+    {
+      "studentId": 40,
+      "subjectId": 2,
+      "date": "2026-09-28",
+      "value": 5,
+      "comment": ""
+    },
+    {
+      "studentId": 30,
+      "subjectId": 3,
+      "date": "2026-09-21",
+      "value": 5,
+      "comment": ""
+    },
+    {
+      "studentId": 29,
+      "subjectId": 3,
+      "date": "2026-09-28",
+      "value": 5,
+      "comment": ""
+    },
+    {
+      "studentId": 28,
+      "subjectId": 3,
+      "date": "2026-09-28",
+      "value": 5,
+      "comment": ""
+    },
+    {
+      "studentId": 31,
+      "subjectId": 3,
+      "date": "2026-09-28",
+      "value": 5,
+      "comment": ""
+    },
+    {
+      "studentId": 30,
+      "subjectId": 3,
+      "date": "2026-09-28",
+      "value": 5,
+      "comment": ""
     }
   ],
   "homework": [
@@ -204,6 +288,20 @@
       "title": "Диаграммы столбчатые",
       "text": "28,29 задания",
       "attachments": []
+    },
+    {
+      "classId": 4,
+      "subjectId": 3,
+      "date": "2026-09-24",
+      "title": "",
+      "text": "",
+      "attachments": [
+        {
+          "name": "IMG_20260924_093105.jpg",
+          "url": "assets\/note4_1_IMG_20260924_093105.jpg",
+          "isImage": true
+        }
+      ]
     }
   ]
 }
