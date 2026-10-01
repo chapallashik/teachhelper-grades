@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T06:31:17.642Z",
+  "generatedAt": "2026-10-01T06:44:10.890Z",
   "classes": [
     {
       "id": 1,
@@ -331,6 +331,14 @@
       "value": 5,
       "comment": "",
       "absenceCode": ""
+    },
+    {
+      "studentId": 25,
+      "subjectId": 1,
+      "date": "2026-09-28",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
     }
   ],
   "homework": [
@@ -369,6 +377,14 @@
           "isImage": true
         }
       ]
+    },
+    {
+      "classId": 1,
+      "subjectId": 1,
+      "date": "2026-09-28",
+      "title": "Практическая работа",
+      "text": "Создание модели грузовичка",
+      "attachments": []
     }
   ]
 }
