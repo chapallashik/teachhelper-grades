@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T13:55:59.367Z",
+  "generatedAt": "2026-10-01T06:31:17.642Z",
   "classes": [
     {
       "id": 1,
@@ -291,6 +291,46 @@
       "value": 5,
       "comment": "",
       "absenceCode": ""
+    },
+    {
+      "studentId": 34,
+      "subjectId": 2,
+      "date": "2026-09-30",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 34,
+      "subjectId": 3,
+      "date": "2026-10-01",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 32,
+      "subjectId": 3,
+      "date": "2026-10-01",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 35,
+      "subjectId": 3,
+      "date": "2026-10-01",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 36,
+      "subjectId": 3,
+      "date": "2026-10-01",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
     }
   ],
   "homework": [
@@ -312,6 +352,20 @@
         {
           "name": "IMG_20260924_093105.jpg",
           "url": "assets\/note4_1_IMG_20260924_093105.jpg",
+          "isImage": true
+        }
+      ]
+    },
+    {
+      "classId": 4,
+      "subjectId": 3,
+      "date": "2026-10-01",
+      "title": "",
+      "text": "",
+      "attachments": [
+        {
+          "name": "IMG_20261001_093038_1.jpg",
+          "url": "assets\/note5_2_IMG_20261001_093038_1.jpg",
           "isImage": true
         }
       ]
