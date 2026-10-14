@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T09:11:47.762Z",
+  "generatedAt": "2026-10-14T09:31:34.602Z",
   "classes": [
     {
       "id": 1,
@@ -670,6 +670,46 @@
     },
     {
       "studentId": 29,
+      "subjectId": 2,
+      "date": "2026-10-14",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 28,
+      "subjectId": 2,
+      "date": "2026-10-14",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 29,
+      "subjectId": 2,
+      "date": "2026-10-28",
+      "value": 2,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 29,
+      "subjectId": 2,
+      "date": "2026-11-04",
+      "value": 2,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 30,
+      "subjectId": 2,
+      "date": "2026-10-14",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 31,
       "subjectId": 2,
       "date": "2026-10-14",
       "value": 2,
