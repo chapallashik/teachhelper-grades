@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T06:42:47.800Z",
+  "generatedAt": "2026-10-16T07:34:44.866Z",
   "classes": [
     {
       "id": 1,
@@ -739,6 +739,30 @@
       "value": 0,
       "comment": "",
       "absenceCode": "УП"
+    },
+    {
+      "studentId": 40,
+      "subjectId": 3,
+      "date": "2026-10-16",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 37,
+      "subjectId": 3,
+      "date": "2026-10-16",
+      "value": 2,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 38,
+      "subjectId": 3,
+      "date": "2026-10-16",
+      "value": 3,
+      "comment": "",
+      "absenceCode": ""
     }
   ],
   "homework": [
