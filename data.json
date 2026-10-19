@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T09:03:07.701Z",
+  "generatedAt": "2026-10-19T07:25:33.214Z",
   "classes": [
     {
       "id": 1,
@@ -663,14 +663,6 @@
     {
       "studentId": 29,
       "subjectId": 2,
-      "date": "2026-10-21",
-      "value": 2,
-      "comment": "",
-      "absenceCode": ""
-    },
-    {
-      "studentId": 29,
-      "subjectId": 2,
       "date": "2026-10-14",
       "value": 4,
       "comment": "",
@@ -681,22 +673,6 @@
       "subjectId": 2,
       "date": "2026-10-14",
       "value": 5,
-      "comment": "",
-      "absenceCode": ""
-    },
-    {
-      "studentId": 29,
-      "subjectId": 2,
-      "date": "2026-10-28",
-      "value": 2,
-      "comment": "",
-      "absenceCode": ""
-    },
-    {
-      "studentId": 29,
-      "subjectId": 2,
-      "date": "2026-11-04",
-      "value": 2,
       "comment": "",
       "absenceCode": ""
     },
@@ -855,6 +831,14 @@
           "isImage": true
         }
       ]
+    },
+    {
+      "classId": 1,
+      "subjectId": 1,
+      "date": "2026-10-19",
+      "title": "Домашнее задание, ответы на вопросы 12 параграф",
+      "text": "",
+      "attachments": []
     }
   ]
 }
