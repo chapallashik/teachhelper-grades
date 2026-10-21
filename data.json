@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T07:23:10.666Z",
+  "generatedAt": "2026-10-21T05:44:27.887Z",
   "classes": [
     {
       "id": 1,
@@ -201,14 +201,6 @@
       "subjectId": 3,
       "date": "2026-09-24",
       "value": 5,
-      "comment": "",
-      "absenceCode": ""
-    },
-    {
-      "studentId": 43,
-      "subjectId": 3,
-      "date": "2026-09-24",
-      "value": 2,
       "comment": "",
       "absenceCode": ""
     },
@@ -824,6 +816,46 @@
       "studentId": 41,
       "subjectId": 3,
       "date": "2026-10-20",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 32,
+      "subjectId": 2,
+      "date": "2026-10-21",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 34,
+      "subjectId": 2,
+      "date": "2026-10-21",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 35,
+      "subjectId": 2,
+      "date": "2026-10-21",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 36,
+      "subjectId": 2,
+      "date": "2026-10-21",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 33,
+      "subjectId": 2,
+      "date": "2026-10-21",
       "value": 5,
       "comment": "",
       "absenceCode": ""
