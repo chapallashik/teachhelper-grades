@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T05:44:57.305Z",
+  "generatedAt": "2026-10-21T06:30:41.800Z",
   "classes": [
     {
       "id": 1,
@@ -855,6 +855,14 @@
     {
       "studentId": 33,
       "subjectId": 2,
+      "date": "2026-10-21",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 27,
+      "subjectId": 1,
       "date": "2026-10-21",
       "value": 5,
       "comment": "",
