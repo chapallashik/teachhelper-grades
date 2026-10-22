@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T06:30:41.800Z",
+  "generatedAt": "2026-10-22T08:52:13.913Z",
   "classes": [
     {
       "id": 1,
@@ -576,7 +576,7 @@
       "studentId": 40,
       "subjectId": 2,
       "date": "2026-10-12",
-      "value": 3,
+      "value": 4,
       "comment": "",
       "absenceCode": ""
     },
@@ -864,6 +864,22 @@
       "studentId": 27,
       "subjectId": 1,
       "date": "2026-10-21",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 38,
+      "subjectId": 2,
+      "date": "2026-10-05",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 40,
+      "subjectId": 2,
+      "date": "2026-10-05",
       "value": 5,
       "comment": "",
       "absenceCode": ""
