@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T05:35:02.195Z",
+  "generatedAt": "2026-11-11T05:35:51.068Z",
   "classes": [
     {
       "id": 1,
@@ -189,30 +189,6 @@
   ],
   "grades": [
     {
-      "studentId": 25,
-      "subjectId": 1,
-      "date": "2026-09-28",
-      "value": 5,
-      "comment": "",
-      "absenceCode": ""
-    },
-    {
-      "studentId": 26,
-      "subjectId": 1,
-      "date": "2026-10-15",
-      "value": 0,
-      "comment": "",
-      "absenceCode": "УП"
-    },
-    {
-      "studentId": 25,
-      "subjectId": 1,
-      "date": "2026-10-15",
-      "value": 5,
-      "comment": "",
-      "absenceCode": ""
-    },
-    {
       "studentId": 27,
       "subjectId": 1,
       "date": "2026-10-21",
@@ -374,22 +350,6 @@
     }
   ],
   "homework": [
-    {
-      "classId": 1,
-      "subjectId": 1,
-      "date": "2026-09-28",
-      "title": "Практическая работа",
-      "text": "Создание модели грузовичка",
-      "attachments": []
-    },
-    {
-      "classId": 1,
-      "subjectId": 1,
-      "date": "2026-10-19",
-      "title": "Домашнее задание, ответы на вопросы 12 параграф",
-      "text": "",
-      "attachments": []
-    },
     {
       "classId": 4,
       "subjectId": 2,
