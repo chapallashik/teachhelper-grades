@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T10:22:54.169Z",
+  "generatedAt": "2026-11-16T08:09:49.488Z",
   "classes": [
     {
       "id": 1,
@@ -499,6 +499,38 @@
       "value": 3,
       "comment": "",
       "absenceCode": ""
+    },
+    {
+      "studentId": 40,
+      "subjectId": 2,
+      "date": "2026-11-16",
+      "value": 0,
+      "comment": "",
+      "absenceCode": "УП"
+    },
+    {
+      "studentId": 37,
+      "subjectId": 2,
+      "date": "2026-11-16",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 38,
+      "subjectId": 2,
+      "date": "2026-11-16",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 39,
+      "subjectId": 2,
+      "date": "2026-11-16",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
     }
   ],
   "homework": [
@@ -516,6 +548,14 @@
       "date": "2026-11-11",
       "title": "дз",
       "text": "71,72,73",
+      "attachments": []
+    },
+    {
+      "classId": 5,
+      "subjectId": 2,
+      "date": "2026-11-16",
+      "title": "ДЗ",
+      "text": "200,201",
       "attachments": []
     }
   ]
