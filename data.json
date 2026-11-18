@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T05:47:36.815Z",
+  "generatedAt": "2026-11-18T09:29:39.825Z",
   "classes": [
     {
       "id": 1,
@@ -376,7 +376,7 @@
       "studentId": 31,
       "subjectId": 2,
       "date": "2026-11-11",
-      "value": 2,
+      "value": 3,
       "comment": "",
       "absenceCode": ""
     },
@@ -635,6 +635,38 @@
       "value": 2,
       "comment": "",
       "absenceCode": ""
+    },
+    {
+      "studentId": 29,
+      "subjectId": 2,
+      "date": "2026-11-18",
+      "value": 0,
+      "comment": "",
+      "absenceCode": "УП"
+    },
+    {
+      "studentId": 30,
+      "subjectId": 2,
+      "date": "2026-11-18",
+      "value": 0,
+      "comment": "",
+      "absenceCode": "УП"
+    },
+    {
+      "studentId": 28,
+      "subjectId": 2,
+      "date": "2026-11-18",
+      "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 31,
+      "subjectId": 2,
+      "date": "2026-11-18",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
     }
   ],
   "homework": [
@@ -668,6 +700,14 @@
       "date": "2026-11-18",
       "title": "Дз",
       "text": "257(и), 258, 259",
+      "attachments": []
+    },
+    {
+      "classId": 3,
+      "subjectId": 2,
+      "date": "2026-11-18",
+      "title": "дз",
+      "text": "81,82,83,84",
       "attachments": []
     }
   ]
