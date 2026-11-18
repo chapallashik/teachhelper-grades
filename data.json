@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T07:20:18.263Z",
+  "generatedAt": "2026-11-18T05:47:36.815Z",
   "classes": [
     {
       "id": 1,
@@ -571,6 +571,70 @@
       "value": 5,
       "comment": "",
       "absenceCode": ""
+    },
+    {
+      "studentId": 32,
+      "subjectId": 2,
+      "date": "2026-11-11",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 34,
+      "subjectId": 2,
+      "date": "2026-11-11",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 35,
+      "subjectId": 2,
+      "date": "2026-11-11",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 36,
+      "subjectId": 2,
+      "date": "2026-11-11",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 32,
+      "subjectId": 2,
+      "date": "2026-11-18",
+      "value": 3,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 34,
+      "subjectId": 2,
+      "date": "2026-11-18",
+      "value": 3,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 35,
+      "subjectId": 2,
+      "date": "2026-11-18",
+      "value": 3,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 36,
+      "subjectId": 2,
+      "date": "2026-11-18",
+      "value": 2,
+      "comment": "",
+      "absenceCode": ""
     }
   ],
   "homework": [
@@ -596,6 +660,14 @@
       "date": "2026-11-16",
       "title": "ДЗ",
       "text": "200,201",
+      "attachments": []
+    },
+    {
+      "classId": 4,
+      "subjectId": 2,
+      "date": "2026-11-18",
+      "title": "Дз",
+      "text": "257(и), 258, 259",
       "attachments": []
     }
   ]
