@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T08:45:21.061Z",
+  "generatedAt": "2026-11-23T10:20:11.125Z",
   "classes": [
     {
       "id": 1,
@@ -849,6 +849,38 @@
       "subjectId": 1,
       "date": "2026-11-19",
       "value": 5,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 29,
+      "subjectId": 3,
+      "date": "2026-11-23",
+      "value": 0,
+      "comment": "",
+      "absenceCode": "УП"
+    },
+    {
+      "studentId": 31,
+      "subjectId": 3,
+      "date": "2026-11-23",
+      "value": 2,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 30,
+      "subjectId": 3,
+      "date": "2026-11-23",
+      "value": 3,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 28,
+      "subjectId": 3,
+      "date": "2026-11-23",
+      "value": 3,
       "comment": "",
       "absenceCode": ""
     }
