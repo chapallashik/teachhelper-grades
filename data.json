@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T11:01:38.754Z",
+  "generatedAt": "2026-11-25T05:41:56.601Z",
   "classes": [
     {
       "id": 1,
@@ -616,7 +616,7 @@
       "studentId": 34,
       "subjectId": 2,
       "date": "2026-11-18",
-      "value": 3,
+      "value": 4,
       "comment": "",
       "absenceCode": ""
     },
@@ -624,7 +624,7 @@
       "studentId": 35,
       "subjectId": 2,
       "date": "2026-11-18",
-      "value": 3,
+      "value": 4,
       "comment": "",
       "absenceCode": ""
     },
@@ -883,6 +883,38 @@
       "value": 5,
       "comment": "",
       "absenceCode": ""
+    },
+    {
+      "studentId": 32,
+      "subjectId": 2,
+      "date": "2026-11-25",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 34,
+      "subjectId": 2,
+      "date": "2026-11-25",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 35,
+      "subjectId": 2,
+      "date": "2026-11-25",
+      "value": 4,
+      "comment": "",
+      "absenceCode": ""
+    },
+    {
+      "studentId": 36,
+      "subjectId": 2,
+      "date": "2026-11-25",
+      "value": 3,
+      "comment": "",
+      "absenceCode": ""
     }
   ],
   "homework": [
@@ -939,6 +971,14 @@
           "isImage": true
         }
       ]
+    },
+    {
+      "classId": 4,
+      "subjectId": 2,
+      "date": "2026-11-25",
+      "title": "дз",
+      "text": "264,266,268",
+      "attachments": []
     }
   ]
 }
